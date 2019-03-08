@@ -1,0 +1,6 @@
+{
+    "require": {
+        "bulton-fr/bfw": "3.0.0-rc.10",
+        "bulton-fr/bfw-cli": "1.0.x-dev"
+    }
+}

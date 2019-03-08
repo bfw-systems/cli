@@ -1,0 +1,29 @@
+#!/bin/sh
+
+DIRECTORY=`pwd`
+
+echo '\033[0;33mCheck module\033[0m'
+
+echo '\033[0;33mRemove and create test directory\033[0m'
+rm -rf install
+mkdir -p install
+cp -R composer.json install/
+
+cd install
+
+echo '\033[0;33mGet composer and install dependancies\033[0m'
+curl -sS https://getcomposer.org/installer | php
+php composer.phar install
+
+echo '\033[0;33mBFW Install and module\033[0m'
+./vendor/bin/bfwInstall
+./vendor/bin/bfwInstallModules --bfw-path="$DIRECTORY/install/"
+
+echo -n '\033[0;33mCheck module installed script has been executed ... \033[0m'
+#DIRECTORY=`dirname $0`
+if [ -d "$DIRECTORY/install/src/cli" ]; then
+    echo '\033[1;32mOK\033[0m'
+else
+    echo '\033[1;31mFail\033[0m'
+    exit 1
+fi

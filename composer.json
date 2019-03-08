@@ -1,0 +1,39 @@
+{
+    "name": "bulton-fr/bfw-cli",
+    "type": "library",
+    "description": "Cli module for BFW",
+    "homepage": "https://github.com/bulton-fr/bfw-cli",
+    "time": "2016-09-25",
+    "license": "LGPL-3.0",
+    "authors": [
+        {
+            "name": "Vermeulen Maxime / Bulton",
+            "homepage": "http://www.bulton.fr",
+            "email": "bulton.fr@gmail.com"
+        }
+    ],
+    "support": {
+        "email": "support@bulton.fr",
+        "issues": "https://github.com/bulton-fr/bfw-cli/issues",
+        "source": "https://github.com/bulton-fr/bfw-cli"
+    },
+    "require": {
+        "bulton-fr/bfw": "3.*"
+    },
+    "require-dev": {
+        "atoum/atoum": "~3.1",
+        "atoum/visibility-extension": "~1.3"
+    },
+	"minimum-stability": "RC",
+    "autoload": {
+        "psr-4": {
+            "BfwCli\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "BfwCli\\Test\\Helpers\\": "test/unit/helpers",
+            "BfwCli\\Test\\Mock\\": "test/unit/mocks/src"
+        }
+    }
+}
