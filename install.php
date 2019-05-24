@@ -1,10 +1,10 @@
 <?php
 
 //Create src/cli directory
-echo ' >> Create src/cli directory ... ';
+echo "\n".'>> Create src/cli directory ... ';
 
 if (file_exists(SRC_DIR.'cli/')) {
-    echo "\033[1;33mAlready exist.\033[0m";
+    echo "\033[1;33mAlready exist.\033[0m\n";
     return;
 }
     

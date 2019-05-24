@@ -17,11 +17,27 @@ php composer.phar install
 
 echo '\033[0;33mBFW Install and module\033[0m'
 ./vendor/bin/bfwInstall
-./vendor/bin/bfwInstallModules --bfw-path="$DIRECTORY/install/"
+./vendor/bin/bfwAddMod -a -b "$DIRECTORY/install/"
+./vendor/bin/bfwEnMod -a -b "$DIRECTORY/install/"
 
 echo -n '\033[0;33mCheck module installed script has been executed ... \033[0m'
-#DIRECTORY=`dirname $0`
 if [ -d "$DIRECTORY/install/src/cli" ]; then
+    echo '\033[1;32mOK\033[0m'
+else
+    echo '\033[1;31mFail\033[0m'
+    exit 1
+fi
+
+echo -n '\033[0;33mCheck module is available ... \033[0m'
+if [ -d "$DIRECTORY/install/app/modules/available/bfw-cli" ]; then
+    echo '\033[1;32mOK\033[0m'
+else
+    echo '\033[1;31mFail\033[0m'
+    exit 1
+fi
+
+echo -n '\033[0;33mCheck module is enabled ... \033[0m'
+if [ -d "$DIRECTORY/install/app/modules/enabled/bfw-cli" ]; then
     echo '\033[1;32mOK\033[0m'
 else
     echo '\033[1;31mFail\033[0m'

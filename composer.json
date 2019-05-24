@@ -18,7 +18,7 @@
         "source": "https://github.com/bulton-fr/bfw-cli"
     },
     "require": {
-        "bulton-fr/bfw": "3.*"
+        "bulton-fr/bfw": "~3.0.0-RC11@RC"
     },
     "require-dev": {
         "atoum/atoum": "~3.1",
